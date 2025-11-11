@@ -8,6 +8,7 @@ use Filament\Support\Facades\FilamentAsset;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use YacoubAlhaidari\OrganizationChart\Commands\MakeOrganizationChartCommand;
 
 class OrganizationChartServiceProvider extends PackageServiceProvider
 {
@@ -18,7 +19,8 @@ class OrganizationChartServiceProvider extends PackageServiceProvider
         $package
             ->name(static::$name)
             ->hasViews()
-            ->hasTranslations();
+            ->hasTranslations()
+            ->hasCommand(MakeOrganizationChartCommand::class);
     }
 
     public function packageBooted(): void
